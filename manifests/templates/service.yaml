@@ -1,0 +1,16 @@
+---
+# Source: helm for kubernetes/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: cosmetic-d6acbb38          # Service name
+  labels:
+    app: cosmetic-d6acbb38
+spec:
+  type: ClusterIP   # Service type (ClusterIP, NodePort, LoadBalancer)
+  selector:
+    app: cosmetic-d6acbb38         # Matches Deployment labels
+  ports:
+    - protocol: TCP
+      port: 3000         # Service port
+      targetPort: 3000  # Target container port
